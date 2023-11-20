@@ -11,8 +11,11 @@ import { persistor, store } from './redux/store';
 import './index.css';
 import 'react-toastify/dist/ReactToastify.css';
 
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+root.render(
   <React.StrictMode>
     <BrowserRouter
       basename="/phonebook-react-ts"
@@ -38,3 +41,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </React.StrictMode>
 );
+
