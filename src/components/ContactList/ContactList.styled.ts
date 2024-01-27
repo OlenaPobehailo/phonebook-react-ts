@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DeleteButton = styled.button`
   height: 30px;
@@ -13,7 +13,7 @@ export const DeleteButton = styled.button`
   font-size: 16px;
 
   &:hover,
-  &:hover {
+  &:focus {
     background-color: red;
     color: #fff;
   }

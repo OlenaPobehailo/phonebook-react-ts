@@ -16,7 +16,7 @@ export const fetchContacts = createAsyncThunk(
 
 export const deleteContact = createAsyncThunk(
   'contacts/deleteContact',
-  async (id, thunkAPI) => {
+  async (id:string, thunkAPI) => {
     try {
       await goitApi.delete(`/contacts/${id}`);
       return id;
