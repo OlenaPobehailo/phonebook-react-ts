@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { goitApi } from '../auth/authOperations';
+import { Contact } from "../../types";
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
@@ -7,7 +8,7 @@ export const fetchContacts = createAsyncThunk(
     try {
       const { data } = await goitApi.get('contacts');
       return data;
-    } catch (e) {
+    } catch (e: any) {
       return thunkAPI.rejectWithValue(e.message);
     }
   }
@@ -27,7 +28,7 @@ export const deleteContact = createAsyncThunk(
 
 export const addContact = createAsyncThunk(
   'contacts/addContact',
-  async (newContact, thunkAPI) => {
+  async (newContact:Contact, thunkAPI) => {
     try {
       const { data } = await goitApi.post('/contacts', newContact);
       return data;

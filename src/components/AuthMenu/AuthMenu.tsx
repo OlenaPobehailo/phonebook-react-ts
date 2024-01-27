@@ -1,15 +1,16 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
+import { StyledList } from "./AuthMenu.styled";
 
-const AuthMenu = () => {
+const AuthMenu: React.FC = () => {
   return (
-    <ul>
+    <StyledList>
       <li>
         <NavLink to="/login">Login</NavLink>
       </li>
       <li>
         <NavLink to="/register">Register</NavLink>
       </li>
-    </ul>
+    </StyledList>
   );
 };
 
