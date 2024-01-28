@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { RootState } from "../store";
-import { LoginFormInputs } from "../../types";
+import { LoginFormInputs, RegisterFormInputs } from "../../types";
 
 export const goitApi = axios.create({
   baseURL: "https://connections-api.herokuapp.com/",
@@ -18,7 +18,7 @@ const clearToken = () => {
 
 export const registerThunk = createAsyncThunk(
   "auth/register",
-  async (credentials, thunkAPI) => {
+  async (credentials: RegisterFormInputs, thunkAPI) => {
     try {
       const { data } = await goitApi.post("/users/signup", credentials);
       setToken(data.token);

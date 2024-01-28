@@ -1,11 +1,11 @@
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { selectIsLoggedIn } from '../../redux/auth/authSelectors';
-import UserMenu from '../UserMenu';
-import AuthMenu from '../AuthMenu';
-import { StyledNav } from './Navigation.styled';
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
+import UserMenu from "../UserMenu";
+import AuthMenu from "../AuthMenu";
+import { StyledNav } from "./Navigation.styled";
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
