@@ -7,17 +7,18 @@ import {
 } from "../../redux/contacts/contactsOperations";
 import { DeleteButton, ListItem } from "./ContactList.styled";
 import { Contact } from "../../types";
+import { AppDispatch } from "../../redux/store";
 
 const ContactList: React.FC = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchContacts() as any);
+    (dispatch as AppDispatch)(fetchContacts() as any);
   }, [dispatch]);
 
   const handleDeleteContact = (id: string): void => {
-    dispatch(deleteContact(id) as any);
+    (dispatch as AppDispatch)(deleteContact(id) as any);
   };
 
   return (

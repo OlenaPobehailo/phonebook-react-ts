@@ -6,6 +6,7 @@ import { selectContacts } from "../../redux/contacts/contactsSelectors";
 import { Input, Button } from "./ContactForm.styled";
 import { Contact } from "../../types";
 import { nanoid } from "@reduxjs/toolkit";
+import { AppDispatch } from "../../redux/store";
 
 const ContactForm: React.FC = () => {
   const [name, setName] = useState<string>("");
@@ -47,7 +48,7 @@ const ContactForm: React.FC = () => {
         name,
         number,
       };
-      dispatch(addContact(newContact) as any);
+      (dispatch as AppDispatch)(addContact(newContact) as any);
       reset();
     }
   };
