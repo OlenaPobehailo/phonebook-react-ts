@@ -1,13 +1,14 @@
-import { Link } from 'react-router-dom';
-import LoginForm from '../components/LoginForm';
+import { Link } from "react-router-dom";
+import LoginForm from "../components/LoginForm";
 
-const Login = () => {
+const Login: React.FC = () => {
   return (
     <div className="center">
       <LoginForm />
-      <div >
+      <div>
         <p>Please, log in.</p>
-        <p>If you do not have an account please
+        <p>
+          If you do not have an account please
           <Link to="/register"> register!</Link>
         </p>
       </div>

@@ -1,7 +1,7 @@
-import { useSelector } from 'react-redux';
-import { selectIsLoggedIn, selectUser } from '../redux/auth/authSelectors';
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn, selectUser } from "../redux/auth/authSelectors";
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const { name } = useSelector(selectUser);
 

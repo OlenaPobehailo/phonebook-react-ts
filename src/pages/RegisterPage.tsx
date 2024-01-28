@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import RegisterForm from '../components/RegisterForm';
+import { Link } from "react-router-dom";
+import RegisterForm from "../components/RegisterForm";
 
-const RegisterPage = () => {
+const RegisterPage: React.FC = () => {
   return (
     <div className="center">
       <RegisterForm />
