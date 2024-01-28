@@ -3,9 +3,9 @@ import { StyledSwitcher } from "./LanguagesSwitcher.styled";
 import i18n from "../../assets/i18n";
 import { LOCALS } from "../../assets/i18n/constants";
 import { LanguageButton } from "../UI/Button/Button.styled";
+import { t } from "i18next";
 
 const LanguagesSwitcher = () => {
-
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language);
   };
@@ -13,16 +13,18 @@ const LanguagesSwitcher = () => {
   return (
     <StyledSwitcher>
       <LanguageButton
-          disabled={i18n.language === LOCALS.EN}
-          onClick={() => i18n.changeLanguage(LOCALS.EN)}
+        disabled={i18n.language === LOCALS.EN}
+        onClick={() => i18n.changeLanguage(LOCALS.EN)}
       >
-        English
+        {i18n.language === LOCALS.EN ? t("English") : t("Change to English")}
       </LanguageButton>
       <LanguageButton
-          disabled={i18n.language === LOCALS.UK}
-          onClick={() => changeLanguage(LOCALS.UK)}
+        disabled={i18n.language === LOCALS.UK}
+        onClick={() => changeLanguage(LOCALS.UK)}
       >
-        Українська
+        {i18n.language === LOCALS.UK
+          ? t("Українська")
+          : t("Змінити на українську")}
       </LanguageButton>
     </StyledSwitcher>
   );
