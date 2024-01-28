@@ -7,6 +7,7 @@ import { Input, Button } from "./ContactForm.styled";
 import { Contact } from "../../types";
 import { nanoid } from "@reduxjs/toolkit";
 import { AppDispatch } from "../../redux/store";
+import { t } from "i18next";
 
 const ContactForm: React.FC = () => {
   const [name, setName] = useState<string>("");
@@ -61,7 +62,7 @@ const ContactForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Name
+        {t("contactForm.name")}
         <Input
           type="text"
           name="name"
@@ -72,7 +73,8 @@ const ContactForm: React.FC = () => {
       </label>
 
       <label>
-        Number
+        {t("contactForm.number")}
+
         <Input
           type="tel"
           name="number"
@@ -82,7 +84,7 @@ const ContactForm: React.FC = () => {
         />
       </label>
 
-      <Button type="submit">Add contact</Button>
+      <Button type="submit">{t("contactForm.add")}</Button>
     </form>
   );
 };

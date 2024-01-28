@@ -3,6 +3,7 @@ import { selectUser } from "../../redux/auth/authSelectors";
 import { logoutThunk } from "../../redux/auth/authOperations";
 import { StyledUserMenu } from "./UserMenu.styled";
 import { AppDispatch } from "../../redux/store";
+import { t } from "i18next";
 
 const UserMenu: React.FC = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const UserMenu: React.FC = () => {
       <span> {name}</span>
       <span>|</span>
       <button onClick={() => (dispatch as AppDispatch)(logoutThunk())}>
-        Logout
+        {t("header.logout")}
       </button>
     </StyledUserMenu>
   );

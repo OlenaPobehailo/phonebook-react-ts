@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import RegisterForm from "../components/RegisterForm";
+import { useTranslation } from "react-i18next";
 
 const RegisterPage: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="center">
+      <p>{t("authForm.registerText_1")}</p>
       <RegisterForm />
-      <p>Please register.</p>
       <p>
-        If you already have an account you can
-        <Link to="/login"> login!</Link>
+        {t("authForm.registerText_2")}
+        <Link to="/login"> {t("authForm.registerText_3")}!</Link>
       </p>
     </div>
   );

@@ -8,6 +8,7 @@ import {
 import { DeleteButton, ListItem } from "./ContactList.styled";
 import { Contact } from "../../types";
 import { AppDispatch } from "../../redux/store";
+import { t } from "i18next";
 
 const ContactList: React.FC = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
@@ -31,7 +32,7 @@ const ContactList: React.FC = () => {
             name="delete"
             onClick={() => handleDeleteContact(contact.id)}
           >
-            Delete
+            {t("contactPage.delete")}
           </DeleteButton>
         </ListItem>
       ))}

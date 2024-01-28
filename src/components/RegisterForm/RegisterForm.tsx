@@ -6,6 +6,7 @@ import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
 import { StyledForm } from "./RegisterForm.styled";
 import { RegisterFormInputs } from "../../types";
 import { AppDispatch } from "../../redux/store";
+import { t } from "i18next";
 
 const RegisterForm: React.FC = () => {
   const dispatch = useDispatch();
@@ -23,22 +24,22 @@ const RegisterForm: React.FC = () => {
   return (
     <StyledForm onSubmit={handleSubmit(submit)}>
       <input
-        placeholder="Enter your name"
+        placeholder={t("authForm.name")}
         {...register("name", { required: true, minLength: 3 })}
         autoComplete="username"
       />
       <input
-        placeholder="Enter your email"
+        placeholder={t("authForm.email")}
         {...register("email", { required: true, minLength: 6 })}
         autoComplete="username"
       />
       <input
         type="password"
-        placeholder="Enter your password"
+        placeholder={t("authForm.password")}
         {...register("password", { required: true, minLength: 6 })}
         autoComplete="current-password"
       />
-      <button type="submit">Register</button>
+      <button type="submit">{t("authForm.register")}</button>
     </StyledForm>
   );
 };

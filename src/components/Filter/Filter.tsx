@@ -4,6 +4,7 @@ import { selectFilter } from "../../redux/contacts/contactsSelectors";
 import { Input } from "./Filter.styled";
 import { ChangeEvent } from "react";
 import { AppDispatch } from "../../redux/store";
+import { t } from "i18next";
 
 const Filter: React.FC = () => {
   const filterValue = useSelector(selectFilter);
@@ -15,7 +16,7 @@ const Filter: React.FC = () => {
 
   return (
     <label>
-      Find contacts by name
+      {t("contactPage.text")}
       <Input
         type="text"
         name="filter"
