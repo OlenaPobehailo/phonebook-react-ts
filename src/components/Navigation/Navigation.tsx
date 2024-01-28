@@ -5,8 +5,9 @@ import { useTranslation } from "react-i18next";
 import UserMenu from "../UserMenu";
 import AuthMenu from "../AuthMenu";
 import { StyledNav } from "./Navigation.styled";
-import { LOCALS } from "../../assets/i18n/constants";
-import i18n  from "../../assets/i18n";
+// import { LOCALS } from "../../assets/i18n/constants";
+// import i18n from "../../assets/i18n";
+import LanguagesSwitcher from "../LanguagesSwitcher";
 
 const Navigation: React.FC = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -26,7 +27,7 @@ const Navigation: React.FC = () => {
       </ul>
 
       {isLoggedIn ? <UserMenu /> : <AuthMenu />}
-      <div>
+      {/* <div>
         <button
           disabled={i18n.language === LOCALS.EN}
           onClick={() => i18n.changeLanguage(LOCALS.EN)}
@@ -39,7 +40,8 @@ const Navigation: React.FC = () => {
         >
           Українська
         </button>
-      </div>
+      </div> */}
+        <LanguagesSwitcher />
     </StyledNav>
   );
 };
