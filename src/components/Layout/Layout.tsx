@@ -1,16 +1,17 @@
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
-import Navigation from '../Navigation';
+import { Suspense } from "react";
+import { Outlet } from "react-router-dom";
+import Navigation from "../Navigation";
+import { Wrapper } from "./Layout.styled";
 
 const Layout = () => {
   return (
     <>
       <Navigation />
-      <div>
+      <Wrapper>
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
         </Suspense>
-      </div>
+      </Wrapper>
     </>
   );
 };

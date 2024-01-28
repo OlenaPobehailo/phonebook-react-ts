@@ -1,17 +1,21 @@
 import { Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useForm } from 'react-hook-form';
+import { useForm , SubmitHandler} from 'react-hook-form';
 import { loginThunk } from '../../redux/auth/authOperations';
 import { selectIsLoggedIn } from '../../redux/auth/authSelectors';
 import { StyledForm } from './LoginForm.styled';
+import { LoginFormInputs } from '../../types';
+import { AppDispatch } from '../../redux/store';
+
+
 
 const LoginForm = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset } = useForm<LoginFormInputs>();
 
-  const submit = data => {
-    dispatch(loginThunk(data));
+  const submit :SubmitHandler<LoginFormInputs>= data => {
+    (dispatch as AppDispatch)(loginThunk({ credentials: data }));
     reset();
   };
 

@@ -19,3 +19,8 @@ export interface Contact {
 export interface ContactsState {
   contacts: Contact[];
 }
+
+export interface LoginFormInputs {
+  email: string;
+  password: string;
+}
