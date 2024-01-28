@@ -1,27 +1,31 @@
-import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { addContact, deleteContact, fetchContacts } from './contactsOperations';
+import { createSlice, isAnyOf } from "@reduxjs/toolkit";
+import { addContact, deleteContact, fetchContacts } from "./contactsOperations";
+import { Contact, ContactsState } from "../../types";
 
-const initialState = {
+const initialState: ContactsState = {
   contacts: [],
   loading: false,
   error: null,
 };
 
 export const contactsSlice = createSlice({
-  name: 'contacts',
+  name: "contacts",
   initialState,
+  reducers: {},
 
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
       .addCase(fetchContacts.fulfilled, (state, { payload }) => {
         state.loading = false;
         state.error = null;
-        state.contacts = payload.sort((a, b) => a.name.localeCompare(b.name));
+        state.contacts = payload.sort((a: Contact, b: Contact) =>
+          a.name.localeCompare(b.name)
+        );
       })
 
       .addCase(deleteContact.fulfilled, (state, { payload }) => {
         state.contacts = state.contacts.filter(
-          contact => contact.id !== payload
+          (contact) => contact.id !== payload
         );
       })
 
@@ -48,7 +52,7 @@ export const contactsSlice = createSlice({
         ),
         (state, { payload }) => {
           state.loading = false;
-          state.error = payload;
+          state.error = typeof payload === "string" ? payload : null;
         }
       );
   },
