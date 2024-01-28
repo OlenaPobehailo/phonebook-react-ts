@@ -15,6 +15,8 @@ export const StyledButton = styled.button`
 `;
 
 export const LanguageButton = styled(StyledButton)`
+  padding: 0;
+  
   &:first-child {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -23,5 +25,6 @@ export const LanguageButton = styled(StyledButton)`
   &:last-child {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    margin-right: 20px;
   }
 `;
