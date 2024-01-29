@@ -24,9 +24,9 @@ export const en = {
     register: "Register",
     registerText_1: "Please register.",
     registerText_2: "If you already have an account you can ",
-    registerText_3: "login.",
+    registerText_3: "login",
     loginText_1: "Please, log in.",
-    loginText_2: "If you do not have an account please",
+    loginText_2: "If you do not have an account please  ",
     loginText_3: "register",
   },
   home: {
