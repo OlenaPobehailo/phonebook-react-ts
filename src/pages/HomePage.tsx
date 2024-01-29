@@ -1,13 +1,16 @@
 import { useTranslation } from "react-i18next";
+import { CenterWrapper, PageWrapper } from "./Page.styled";
 
 const HomePage: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="center">
-      <p>{t("home.welcomeTextGuest")}</p>
-      <p>{t("home.authTextGuest")}</p>
-    </div>
+    <PageWrapper>
+      <CenterWrapper>
+        <p>{t("home.welcomeTextGuest")}</p>
+        <p>{t("home.authTextGuest")}</p>
+      </CenterWrapper>
+    </PageWrapper>
   );
 };
 

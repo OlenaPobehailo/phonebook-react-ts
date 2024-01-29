@@ -4,7 +4,7 @@ export const DeleteButton = styled.button`
   height: 30px;
   padding: 0 10px;
   border-radius: 4px;
-  border: 1px solid grey;
+  border: 1px solid ${({ theme }) => theme.colors.accentDark.primary};
   background-color: transparent;
   cursor: pointer;
   transition-property: all;
@@ -14,9 +14,11 @@ export const DeleteButton = styled.button`
 
   &:hover,
   &:focus {
-    background-color: red;
-    color: #fff;
-  }
+    background-color: ${({ theme }) => theme.colors.accentLight.secondary};
+    color: ${({ theme }) => theme.colors.background.primary};
+    border: 1px solid ${({ theme }) => theme.colors.accentLight.secondary};
+    box-shadow: 0.1rem 0 0.5 rgba(0, 0, 0, 0.5);
+ }
 `;
 
 export const ListItem = styled.li`

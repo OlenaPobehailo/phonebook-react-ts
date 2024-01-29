@@ -13,35 +13,12 @@ const Navigation: React.FC = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const { t } = useTranslation();
 
-  // console.log("i18n instance:", i18n);
-
   return (
     <StyledNav>
-      <ul>
-        <li>{!isLoggedIn && <NavLink to="/">{t("header.home")}</NavLink>}</li>
-        <li>
-          {isLoggedIn && (
-            <NavLink to="/contacts">{t("header.contacts")}</NavLink>
-          )}
-        </li>
-      </ul>
+        {!isLoggedIn && <NavLink to="/">{t("header.home")}</NavLink>}
 
       {isLoggedIn ? <UserMenu /> : <AuthMenu />}
-      {/* <div>
-        <button
-          disabled={i18n.language === LOCALS.EN}
-          onClick={() => i18n.changeLanguage(LOCALS.EN)}
-        >
-          English
-        </button>
-        <button
-          disabled={i18n.language === LOCALS.UK}
-          onClick={() => i18n.changeLanguage(LOCALS.UK)}
-        >
-          Українська
-        </button>
-      </div> */}
-        <LanguagesSwitcher />
+      <LanguagesSwitcher />
     </StyledNav>
   );
 };

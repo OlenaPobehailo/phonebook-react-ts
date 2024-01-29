@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
 import { useTranslation } from "react-i18next";
+import { PageWrapper } from "./Page.styled";
 
 const Login: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="center">
+    <PageWrapper>
       <p>{t("authForm.loginText_1")}</p>
       <LoginForm />
       <div>
@@ -15,7 +16,7 @@ const Login: React.FC = () => {
           <Link to="/register">{t("authForm.loginText_3")}</Link>
         </p>
       </div>
-    </div>
+    </PageWrapper>
   );
 };
 

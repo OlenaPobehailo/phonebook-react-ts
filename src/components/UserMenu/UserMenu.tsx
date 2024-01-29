@@ -13,7 +13,6 @@ const UserMenu: React.FC = () => {
   return (
     <StyledUserMenu>
       <span> {name}</span>
-      <span>|</span>
       <button onClick={() => (dispatch as AppDispatch)(logoutThunk())}>
         {t("header.logout")}
       </button>
