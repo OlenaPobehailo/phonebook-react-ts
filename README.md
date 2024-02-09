@@ -29,5 +29,5 @@ This is a frontend React application for managing contacts and users. It provide
 - **Redux:** State management library for React applications  
 
 ## Usage
-**Contacts Management:** Manage your contacts efficiently by adding, updating, deleting, and marking them as favorites.  
-**User Authentication:** Register as a new user, log in securely, and perform various user-related actions.
+- **Contacts Management:** Manage your contacts efficiently by adding, updating, deleting, and marking them as favorites.  
+- **User Authentication:** Register as a new user, log in securely, and perform various user-related actions.
