@@ -35,4 +35,9 @@ export const en = {
     welcomeTextUser: "Welcome to the phone book, guest!",
     authTextUser: "Please sign up or sign in!",
   },
+
+  errors: {
+    registerError: "Registration failed. Please check your data and try again!",
+    loginError: "User does not exist or wrong password. Please try again!",
+  },
 };

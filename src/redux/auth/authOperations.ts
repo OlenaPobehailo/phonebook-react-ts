@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { t } from "i18next";
 import { RootState } from "../store";
 import { LoginFormInputs, RegisterFormInputs } from "../../types";
 
@@ -24,7 +25,7 @@ export const registerThunk = createAsyncThunk(
       setToken(data.token);
       return data;
     } catch (error) {
-      toast.error("Registration failed. Please try again!");
+      toast.error(t("errors.registerError"));
       return thunkAPI.rejectWithValue(error as string);
     }
   }
@@ -39,7 +40,7 @@ export const loginThunk = createAsyncThunk(
 
       return data;
     } catch (error) {
-      toast.error("User does not exist. Please try again!");
+      toast.error(t("errors.loginError"));
       return thunkAPI.rejectWithValue(error as string);
     }
   }
