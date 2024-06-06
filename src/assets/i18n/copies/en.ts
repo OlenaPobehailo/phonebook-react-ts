@@ -39,5 +39,7 @@ export const en = {
   errors: {
     registerError: "Registration failed. Please check your data and try again!",
     loginError: "User does not exist or wrong password. Please try again!",
+    duplicateEmailError:
+      "Sorry, a user with the same email address exists. If this is you, please log in. Otherwise, check your data and try again.",
   },
 };

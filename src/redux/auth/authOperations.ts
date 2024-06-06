@@ -24,9 +24,17 @@ export const registerThunk = createAsyncThunk(
       const { data } = await goitApi.post("/users/signup", credentials);
       setToken(data.token);
       return data;
-    } catch (error) {
+    } catch (error: any) {
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.code === 11000
+      ) {
+        toast.error(t("errors.duplicateEmailError"));
+        return thunkAPI.rejectWithValue(t("errors.duplicateEmailError"));
+      }
       toast.error(t("errors.registerError"));
-      return thunkAPI.rejectWithValue(error as string);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
