@@ -11,6 +11,8 @@ export const en = {
     text: "Find contacts by name:",
     delete: "Delete",
     edit: "Edit",
+    sortAsc: "Sorting",
+    sortDesc: "Sorting",
   },
   contactForm: {
     name: "Name:",

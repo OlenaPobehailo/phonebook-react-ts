@@ -14,11 +14,13 @@ import {
   DeleteButton,
   EditButton,
   ListItem,
+  SortButton,
 } from "./ContactList.styled";
 
 const ContactList: React.FC = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
   const [editingContact, setEditingContact] = useState<Contact | null>(null);
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,6 +39,16 @@ const ContactList: React.FC = () => {
     setEditingContact(null);
   };
 
+  const handleSortOrderChange = () => {
+    setSortOrder((prevSortOrder) => (prevSortOrder === "asc" ? "desc" : "asc"));
+  };
+
+  const sortedContacts = [...filteredContacts].sort((a, b) =>
+    sortOrder === "asc"
+      ? a.name.localeCompare(b.name)
+      : b.name.localeCompare(a.name)
+  );
+
   return (
     <>
       {editingContact && (
@@ -45,8 +57,15 @@ const ContactList: React.FC = () => {
           onClose={handleCloseEditForm}
         />
       )}
+      <SortButton onClick={handleSortOrderChange}>
+        {sortOrder === "asc" ? (
+          <>{t("contactPage.sortAsc")} &uarr;</>
+        ) : (
+          <>{t("contactPage.sortDesc")} &darr;</>
+        )}
+      </SortButton>
       <ul>
-        {filteredContacts.map((contact: Contact) => (
+        {sortedContacts.map((contact: Contact) => (
           <ListItem key={contact.id}>
             {contact.name + ": " + contact.number}
             <ButtonWrapper>

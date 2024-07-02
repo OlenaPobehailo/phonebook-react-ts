@@ -11,6 +11,9 @@ export const uk = {
     text: "Пошук контакту за ім'ям:",
     delete: "Видалити",
     edit: "Редагувати",
+    sortAsc:"Сортувати",
+    sortDesc:"Сортувати"
+
   },
   contactForm: {
     name: "Ім'я:",

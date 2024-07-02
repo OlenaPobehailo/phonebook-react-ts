@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const ButtonWrapper = styled.div`
-display: flex;
-gap: 8px;
-`
+  display: flex;
+  gap: 8px;
+`;
 
 export const DeleteButton = styled.button`
   height: 30px;
@@ -45,6 +45,17 @@ export const EditButton = styled.button`
     border: 1px solid ${({ theme }) => theme.colors.accentLight.secondary};
     box-shadow: 0.1rem 0 0.5 rgba(0, 0, 0, 0.5);
   }
+`;
+
+export const SortButton = styled.button`
+  height: 30px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  background-color: ${({ theme }) => theme.colors.accentLight.primary};
+  color: white;
+  border-radius: 4px;
+  border: 1px solid ${({ theme }) => theme.colors.accentDark.primary};
+
 `;
 
 export const ListItem = styled.li`
