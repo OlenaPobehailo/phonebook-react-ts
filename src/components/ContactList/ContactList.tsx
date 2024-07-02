@@ -54,7 +54,7 @@ const ContactList: React.FC = () => {
                 type="button"
                 onClick={() => handleEditContact(contact)}
               >
-                Edit
+                {t("contactPage.edit")}
               </EditButton>
               <DeleteButton
                 type="button"

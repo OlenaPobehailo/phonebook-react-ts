@@ -10,11 +10,16 @@ export const en = {
     contacts: "Contacts",
     text: "Find contacts by name:",
     delete: "Delete",
+    edit: "Edit",
   },
   contactForm: {
     name: "Name:",
     number: "Phone number:",
     add: "Add contact",
+  },
+  editForm: {
+    submit: "Submit",
+    close: "Close",
   },
   authForm: {
     name: "Enter your name",

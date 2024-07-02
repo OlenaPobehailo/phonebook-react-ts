@@ -46,9 +46,9 @@ const EditContactForm: React.FC<EditContactFormProps> = ({
           />
         </Wrapper>
         <Wrapper>
-          <Button type="submit">Submit</Button>
+          <Button type="submit">{t("editForm.submit")}</Button>
           <Button type="button" onClick={onClose}>
-            Close
+            {t("editForm.close")}
           </Button>
         </Wrapper>
       </form>

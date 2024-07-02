@@ -10,11 +10,16 @@ export const uk = {
     contacts: "Контакти",
     text: "Пошук контакту за ім'ям:",
     delete: "Видалити",
+    edit: "Редагувати",
   },
   contactForm: {
     name: "Ім'я:",
     number: "Номер телефону:",
     add: "Додати контакт",
+  },
+  editForm: {
+    submit: "Підтвердити",
+    close: "Закрити",
   },
   authForm: {
     name: "Ваше ім'я",
