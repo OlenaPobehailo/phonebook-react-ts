@@ -17,7 +17,6 @@ export const contactsSlice = createSlice({
   name: "contacts",
   initialState,
   reducers: {},
-
   extraReducers: (builder) => {
     builder
       .addCase(fetchContacts.fulfilled, (state, { payload }) => {
@@ -27,13 +26,11 @@ export const contactsSlice = createSlice({
           a.name.localeCompare(b.name)
         );
       })
-
       .addCase(deleteContact.fulfilled, (state, { payload }) => {
         state.contacts = state.contacts.filter(
           (contact) => contact.id !== payload
         );
       })
-
       .addCase(addContact.fulfilled, (state, { payload }) => {
         state.contacts.unshift(payload);
       })
@@ -45,7 +42,6 @@ export const contactsSlice = createSlice({
           state.contacts[index] = action.payload;
         }
       })
-
       .addMatcher(
         isAnyOf(
           fetchContacts.pending,
@@ -53,7 +49,7 @@ export const contactsSlice = createSlice({
           addContact.pending,
           editContact.pending
         ),
-        (state, { payload }) => {
+        (state) => {
           state.loading = true;
           state.error = null;
         }

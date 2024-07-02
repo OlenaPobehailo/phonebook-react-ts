@@ -38,17 +38,15 @@ export const addContact = createAsyncThunk(
   }
 );
 
-export const editContact = createAsyncThunk(
-  "contacts/editContact",
-  async (
-    { id, updatedContact }: { id: string; updatedContact: Contact },
-    thunkAPI
-  ) => {
-    try {
-      const { data } = await goitApi.put(`/contacts/${id}`, updatedContact);
-      return data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error);
-    }
+export const editContact = createAsyncThunk<
+  Contact,
+  { id: string; updatedContact: Omit<Contact, "id"> },
+  { rejectValue: string }
+>("contacts/editContact", async ({ id, updatedContact }, thunkAPI) => {
+  try {
+    const { data } = await goitApi.patch(`/contacts/${id}`, updatedContact);
+    return data;
+  } catch (error: any) {
+    return thunkAPI.rejectWithValue(error.message);
   }
-);
+});
