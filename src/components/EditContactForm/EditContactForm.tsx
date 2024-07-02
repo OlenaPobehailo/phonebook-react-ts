@@ -4,6 +4,7 @@ import { t } from "i18next";
 import { AppDispatch } from "../../redux/store";
 import { editContact } from "../../redux/contacts/contactsOperations";
 import { Contact } from "../../types";
+import { Button, FormWrapper, Input, Wrapper } from "./EditContactForm.styled";
 
 interface EditContactFormProps {
   contact: Contact;
@@ -20,8 +21,7 @@ const EditContactForm: React.FC<EditContactFormProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const updatedContact = { name, number }; // Omit the id
-    console.log('Updating contact:', updatedContact); // Log the data
+    const updatedContact = { name, number };
     (dispatch as AppDispatch)(
       editContact({ id: contact.id, updatedContact }) as any
     );
@@ -29,24 +29,30 @@ const EditContactForm: React.FC<EditContactFormProps> = ({
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder=""
-      />
-      <input
-        type="text"
-        value={number}
-        onChange={(e) => setNumber(e.target.value)}
-        placeholder=""
-      />
-      <button type="submit">submit</button>
-      <button type="button" onClick={onClose}>
-        close
-      </button>
-    </form>
+    <FormWrapper>
+      <form onSubmit={handleSubmit}>
+        <Wrapper>
+          <Input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder=""
+          />
+          <Input
+            type="text"
+            value={number}
+            onChange={(e) => setNumber(e.target.value)}
+            placeholder=""
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button type="submit">Submit</Button>
+          <Button type="button" onClick={onClose}>
+            Close
+          </Button>
+        </Wrapper>
+      </form>
+    </FormWrapper>
   );
 };
 
