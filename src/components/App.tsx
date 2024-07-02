@@ -1,5 +1,5 @@
 import { lazy, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { PrivateRoute, RestrictedRoute } from "routes";
@@ -32,7 +32,11 @@ export const App = () => {
       ) : (
         <Routes>
           <Route path="/" element={<Layout />}>
-            {!isLoggedIn ? <Route index element={<HomePage />} /> : null}
+            {!isLoggedIn ? (
+              <Route index element={<HomePage />} />
+            ) : (
+              <Route index element={<Navigate to="/contacts" />} />
+            )}
 
             <Route
               path="/contacts"

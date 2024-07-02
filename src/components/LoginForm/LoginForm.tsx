@@ -23,7 +23,7 @@ const schema = yup.object().shape({
     .min(7, "Password must be at least 7 characters")
     .matches(
       /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$/,
-      "Password must be at least 7 characters long, contain at least one letter and one number, and must not contain special characters"
+      "Password must be at least 7 characters long, contain at least one latin letter and one number, and must not contain special characters"
     ),
 });
 
