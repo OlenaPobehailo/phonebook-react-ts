@@ -1,5 +1,10 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { addContact, deleteContact, fetchContacts } from "./contactsOperations";
+import {
+  addContact,
+  deleteContact,
+  editContact,
+  fetchContacts,
+} from "./contactsOperations";
 import { Contact, ContactsState } from "../../types";
 
 const initialState: ContactsState = {
@@ -32,12 +37,21 @@ export const contactsSlice = createSlice({
       .addCase(addContact.fulfilled, (state, { payload }) => {
         state.contacts.unshift(payload);
       })
+      .addCase(editContact.fulfilled, (state, action) => {
+        const index = state.contacts.findIndex(
+          (contact) => contact.id === action.payload.id
+        );
+        if (index !== -1) {
+          state.contacts[index] = action.payload;
+        }
+      })
 
       .addMatcher(
         isAnyOf(
           fetchContacts.pending,
           deleteContact.pending,
-          addContact.pending
+          addContact.pending,
+          editContact.pending
         ),
         (state, { payload }) => {
           state.loading = true;
@@ -48,7 +62,8 @@ export const contactsSlice = createSlice({
         isAnyOf(
           fetchContacts.rejected,
           deleteContact.rejected,
-          addContact.rejected
+          addContact.rejected,
+          editContact.rejected
         ),
         (state, { payload }) => {
           state.loading = false;
