@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { StyledList } from "./AuthMenu.styled";
 import { t } from "i18next";
+import { StyledList } from "./AuthMenu.styled";
 
 const AuthMenu: React.FC = () => {
   return (

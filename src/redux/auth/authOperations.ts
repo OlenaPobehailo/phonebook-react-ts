@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { t } from "i18next";
 import { RootState } from "../store";
-import { LoginFormInputs, RegisterFormInputs } from "../../types";
+import { LoginFormInputs, RegisterFormInputs } from "types";
 
 export const goitApi = axios.create({
   baseURL: "https://connections-api.herokuapp.com/",

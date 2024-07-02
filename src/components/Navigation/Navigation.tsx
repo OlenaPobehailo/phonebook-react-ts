@@ -1,13 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
 import { useTranslation } from "react-i18next";
-import UserMenu from "../UserMenu";
-import AuthMenu from "../AuthMenu";
+import AuthMenu from "components/AuthMenu";
+import UserMenu from "components/UserMenu";
+import LanguagesSwitcher from "components/LanguagesSwitcher";
+import { selectIsLoggedIn } from "redux/auth/authSelectors";
 import { StyledNav } from "./Navigation.styled";
-// import { LOCALS } from "../../assets/i18n/constants";
-// import i18n from "../../assets/i18n";
-import LanguagesSwitcher from "../LanguagesSwitcher";
 
 const Navigation: React.FC = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -15,7 +13,7 @@ const Navigation: React.FC = () => {
 
   return (
     <StyledNav>
-        {!isLoggedIn && <NavLink to="/">{t("header.home")}</NavLink>}
+      {!isLoggedIn && <NavLink to="/">{t("header.home")}</NavLink>}
 
       {isLoggedIn ? <UserMenu /> : <AuthMenu />}
       <LanguagesSwitcher />

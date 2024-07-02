@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import LoginForm from "../components/LoginForm";
 import { useTranslation } from "react-i18next";
+import LoginForm from "components/LoginForm";
 import { PageWrapper } from "./Page.styled";
 
 const Login: React.FC = () => {

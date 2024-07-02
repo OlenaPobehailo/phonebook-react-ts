@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import RegisterForm from "../components/RegisterForm";
 import { useTranslation } from "react-i18next";
+import RegisterForm from "components/RegisterForm";
 import { PageWrapper } from "./Page.styled";
 
 const RegisterPage: React.FC = () => {

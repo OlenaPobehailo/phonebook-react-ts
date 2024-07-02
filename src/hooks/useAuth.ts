@@ -3,8 +3,8 @@ import {
   selectIsLoggedIn,
   selectIsRefreshing,
   selectUser,
-} from "../redux/auth/authSelectors";
-import { User } from "../types";
+} from "redux/auth/authSelectors";
+import { User } from "types";
 
 type AuthState = {
   isLoggedIn: boolean;

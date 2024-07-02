@@ -1,9 +1,8 @@
-import React from "react";
-import { StyledSwitcher } from "./LanguagesSwitcher.styled";
-import i18n from "../../assets/i18n";
-import { LOCALS } from "../../assets/i18n/constants";
-import { LanguageButton } from "../UI/Button/Button.styled";
+import i18n from "assets/i18n";
 import { t } from "i18next";
+import { LOCALS } from "assets/i18n/constants";
+import { LanguageButton } from "../UI/Button/Button.styled";
+import { StyledSwitcher } from "./LanguagesSwitcher.styled";
 
 const LanguagesSwitcher = () => {
   const changeLanguage = (language: string) => {

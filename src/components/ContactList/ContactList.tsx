@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectFilteredContacts } from "../../redux/contacts/contactsSelectors";
+import { t } from "i18next";
+import EditContactForm from "components/EditContactForm";
 import {
   deleteContact,
   fetchContacts,
-} from "../../redux/contacts/contactsOperations";
+} from "redux/contacts/contactsOperations";
+import { selectFilteredContacts } from "redux/contacts/contactsSelectors";
+import { AppDispatch } from "redux/store";
+import { Contact } from "types";
 import {
   ButtonWrapper,
   DeleteButton,
   EditButton,
   ListItem,
 } from "./ContactList.styled";
-import { Contact } from "../../types";
-import { AppDispatch } from "../../redux/store";
-import { t } from "i18next";
-import EditContactForm from "../EditContactForm";
 
 const ContactList: React.FC = () => {
   const filteredContacts = useSelector(selectFilteredContacts);

@@ -5,7 +5,7 @@ import {
   editContact,
   fetchContacts,
 } from "./contactsOperations";
-import { Contact, ContactsState } from "../../types";
+import { Contact, ContactsState } from "types";
 
 const initialState: ContactsState = {
   contacts: [],

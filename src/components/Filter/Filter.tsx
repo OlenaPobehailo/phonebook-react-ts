@@ -1,10 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
-import { updateFilter } from "../../redux/contacts/filterSlice";
-import { selectFilter } from "../../redux/contacts/contactsSelectors";
-import { Input } from "./Filter.styled";
 import { ChangeEvent } from "react";
-import { AppDispatch } from "../../redux/store";
+import { useDispatch, useSelector } from "react-redux";
 import { t } from "i18next";
+import { updateFilter } from "redux/contacts/filterSlice";
+import { selectFilter } from "redux/contacts/contactsSelectors";
+import { AppDispatch } from "redux/store";
+import { Input } from "./Filter.styled";
 
 const Filter: React.FC = () => {
   const filterValue = useSelector(selectFilter);

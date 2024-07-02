@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectUser } from "../../redux/auth/authSelectors";
-import { logoutThunk } from "../../redux/auth/authOperations";
-import { StyledUserMenu } from "./UserMenu.styled";
-import { AppDispatch } from "../../redux/store";
 import { t } from "i18next";
+import { selectUser } from "redux/auth/authSelectors";
+import { logoutThunk } from "redux/auth/authOperations";
+import { AppDispatch } from "redux/store";
+import { StyledUserMenu } from "./UserMenu.styled";
 
 const UserMenu: React.FC = () => {
   const dispatch = useDispatch();

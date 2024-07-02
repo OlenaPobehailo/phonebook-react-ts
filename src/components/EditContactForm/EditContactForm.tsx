@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { t } from "i18next";
-import { AppDispatch } from "../../redux/store";
-import { editContact } from "../../redux/contacts/contactsOperations";
-import { Contact } from "../../types";
+import { AppDispatch } from "redux/store";
+import { editContact } from "redux/contacts/contactsOperations";
+import { Contact } from "types";
 import { Button, FormWrapper, Input, Wrapper } from "./EditContactForm.styled";
 
 interface EditContactFormProps {

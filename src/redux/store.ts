@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
 import {
   persistStore,
   persistReducer,
@@ -14,7 +15,6 @@ import storage from "redux-persist/lib/storage";
 import contactsReducer from "./contacts/contactsSlice";
 import filterReducer from "./contacts/filterSlice";
 import authReducer from "./auth/authSlice";
-import { useDispatch } from "react-redux";
 
 const persistConfig = {
   key: "auth",

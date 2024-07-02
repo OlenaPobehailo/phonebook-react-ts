@@ -4,10 +4,10 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { t } from "i18next";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { registerThunk } from "../../redux/auth/authOperations";
-import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
-import { RegisterFormInputs } from "../../types";
-import { AppDispatch } from "../../redux/store";
+import { registerThunk } from "redux/auth/authOperations";
+import { selectIsLoggedIn } from "redux/auth/authSelectors";
+import { AppDispatch } from "redux/store";
+import { RegisterFormInputs } from "types";
 import { StyledForm } from "./RegisterForm.styled";
 
 const schema = yup.object().shape({

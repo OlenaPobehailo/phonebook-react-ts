@@ -1,13 +1,13 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
-import { addContact } from "../../redux/contacts/contactsOperations";
-import { selectContacts } from "../../redux/contacts/contactsSelectors";
-import { Input, Button } from "./ContactForm.styled";
-import { Contact } from "../../types";
 import { nanoid } from "@reduxjs/toolkit";
-import { AppDispatch } from "../../redux/store";
+import { toast } from "react-toastify";
 import { t } from "i18next";
+import { addContact } from "redux/contacts/contactsOperations";
+import { selectContacts } from "redux/contacts/contactsSelectors";
+import { Contact } from "types";
+import { AppDispatch } from "redux/store";
+import { Input, Button } from "./ContactForm.styled";
 
 const ContactForm: React.FC = () => {
   const [name, setName] = useState<string>("");

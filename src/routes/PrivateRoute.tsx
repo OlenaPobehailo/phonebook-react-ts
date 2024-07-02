@@ -1,7 +1,7 @@
+import { ReactNode } from "react";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../redux/auth/authSelectors";
-import { ReactNode } from "react";
+import { selectIsLoggedIn } from "redux/auth/authSelectors";
 
 interface PrivateRouteProps {
   children: ReactNode;
