@@ -57,35 +57,43 @@ const ContactList: React.FC = () => {
           onClose={handleCloseEditForm}
         />
       )}
-      <SortButton onClick={handleSortOrderChange}>
-        {sortOrder === "asc" ? (
-          <>{t("contactPage.sortAsc")} &uarr;</>
-        ) : (
-          <>{t("contactPage.sortDesc")} &darr;</>
-        )}
-      </SortButton>
-      <ul>
-        {sortedContacts.map((contact: Contact) => (
-          <ListItem key={contact.id}>
-            {contact.name + ": " + contact.number}
-            <ButtonWrapper>
-              <EditButton
-                type="button"
-                onClick={() => handleEditContact(contact)}
-              >
-                {t("contactPage.edit")}
-              </EditButton>
-              <DeleteButton
-                type="button"
-                name="delete"
-                onClick={() => handleDeleteContact(contact.id)}
-              >
-                {t("contactPage.delete")}
-              </DeleteButton>
-            </ButtonWrapper>
-          </ListItem>
-        ))}
-      </ul>
+
+      {filteredContacts.length === 0 ? (
+        <p>{t("contactPage.emptyList")}</p>
+      ) : (
+        <>
+          <SortButton onClick={handleSortOrderChange}>
+            {sortOrder === "asc" ? (
+              <>{t("contactPage.sortAsc")} &uarr;</>
+            ) : (
+              <>{t("contactPage.sortDesc")} &darr;</>
+            )}
+          </SortButton>
+
+          <ul>
+            {sortedContacts.map((contact: Contact) => (
+              <ListItem key={contact.id}>
+                {contact.name + ": " + contact.number}
+                <ButtonWrapper>
+                  <EditButton
+                    type="button"
+                    onClick={() => handleEditContact(contact)}
+                  >
+                    {t("contactPage.edit")}
+                  </EditButton>
+                  <DeleteButton
+                    type="button"
+                    name="delete"
+                    onClick={() => handleDeleteContact(contact.id)}
+                  >
+                    {t("contactPage.delete")}
+                  </DeleteButton>
+                </ButtonWrapper>
+              </ListItem>
+            ))}
+          </ul>
+        </>
+      )}
     </>
   );
 };

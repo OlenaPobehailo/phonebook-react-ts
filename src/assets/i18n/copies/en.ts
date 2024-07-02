@@ -13,6 +13,7 @@ export const en = {
     edit: "Edit",
     sortAsc: "Sorting",
     sortDesc: "Sorting",
+    emptyList: "Contact list is empty",
   },
   contactForm: {
     name: "Name:",
