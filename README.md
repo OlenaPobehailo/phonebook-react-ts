@@ -2,6 +2,9 @@
 ## Introduction
 This is a frontend React application for managing contacts and users. It provides various functionalities for managing contacts and user authentication.
 
+## Backend
+https://connections-api.herokuapp.com/docs/ 
+
 ##  Languages / Мови
 - **English**
 - **Українська**
