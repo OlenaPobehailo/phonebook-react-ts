@@ -6,7 +6,7 @@ import { RootState } from "../store";
 import { LoginFormInputs, RegisterFormInputs } from "types";
 
 export const goitApi = axios.create({
-  baseURL: "https://connections-api.herokuapp.com/",
+  baseURL: "https://connections-api.goit.global/",
 });
 
 const setToken = (token: string) => {
